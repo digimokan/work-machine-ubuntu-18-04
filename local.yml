@@ -1,0 +1,13 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - name: clone latest vim config
+    git:
+      repo: https://github.com/digimokan/dotfiles-vim.git
+      version: ansible_setup
+      depth: 1
+      dest: /tmp/dotfiles-vim
+      force: yes
+  - name: run latest vim config
+    include_tasks: /tmp/dotfiles-vim/.vim/setup/ansible_setup_tasks.yml
+
