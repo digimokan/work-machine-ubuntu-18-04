@@ -1,3 +1,6 @@
+- name: Add local host to inventory
+  add_host:
+    hostname: 127.0.0.1
 - hosts: all
   connection: local
   become: true
