@@ -18,7 +18,9 @@ bootstrap_ansible() {
 }
 
 update_config() {
-  sudo ansible-pull -U https://github.com/digimokan/work-machine-ubuntu-18-04.git
+  sudo ansible-pull \
+    --url https://github.com/digimokan/work-machine-ubuntu-18-04.git \
+    --extra-vars "target_host=$(hostname)"
 }
 
 main() {
