@@ -1,4 +1,5 @@
-- hosts: "{{ target_host }}"
+- hosts: 127.0.0.1
+  connection: local
   become: true
   tasks:
   - name: clone latest vim config
