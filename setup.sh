@@ -18,9 +18,8 @@ bootstrap_ansible() {
 }
 
 update_config() {
-  sudo ansible-pull \
-    --url 'https://github.com/digimokan/work-machine-ubuntu-18-04.git' \
-    --inventory '127.0.0.1,'
+  git pull 'https://github.com/digimokan/work-machine-ubuntu-18-04.git'
+  sudo ansible-playbook --inventory '127.0.0.1,' local.yml
 }
 
 main() {
